@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitagorasz</title>
+<link rel="stylesheet" href="css.css">
+   
+</head>
+
+<body>
+
+    <h1 class="font1">Pitagorasz tétel számoló</h1>
+
+    <fieldset style="width: 300px;">
+        <label for="A">A:</label><input type="text" id="A" oninput="myFunction()" value=""><br>
+        <label for="B">B:</label><input type="text" id="B" oninput="myFunction()" value=""><br>
+        <label for="C">C:</label><input type="text" id="C" oninput="myFunction()" value=""><br>
+        <input type="button" value="Delete" onclick="Delete()">
+    </fieldset>
+    <div class="nyil" id="haromszog">
+    </div>
+
+    <script>
+        function myFunction() {
+            if (A.value != 0 && B.value != 0) {
+                C.value = Math.sqrt((A.value * A.value) + (B.value + B.value))
+            } 
+            else if (A.value != 0 && C.value != 0) {
+                B.value = Math.sqrt((A.value * A.value) - (C.value + C.value))
+            } 
+            else if (B.value != 0 && C.value != 0) {
+                A.value = Math.sqrt((B.value * B.value) + (C.value + C.value))
+            }
+            const szog = document.getElementById('haromszog');
+            szog.style = "border-bottom:" + B.value + "px solid black;" + "border-right:" + A.value + "px solid transparent;";
+
+        }
+
+        function Delete() {
+            A.value = ""
+            B.value = ""
+            C.value = ""
+        }
+    </script>
+</body>
+
+</html>
