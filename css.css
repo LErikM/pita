@@ -1,0 +1,7 @@
+.nyil{
+width: 0;
+height: 0;
+display: inline-block;
+border-bottom: 10px solid black;
+border-right: 10px solid transparent ;
+}
